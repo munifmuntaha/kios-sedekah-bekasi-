@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kios Sedekah - Toko Sembako Terlengkap & Berkah</title>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --dark: #212121;
+            --light: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigasi */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo p {
+            font-size: 12px;
+            color: #c8e6c9;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #c8e6c9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(46, 125, 50, 0.9)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e8f5e9;
+        }
+
+        /* Info Toko */
+        .info-section {
+            padding: 40px 0;
+            background-color: var(--white);
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        /* Katalog Produk */
+        .catalog-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .catalog-title h2 {
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #e0e0e0;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-info h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .product-info p {
+            font-size: 13px;
+            color: #616161;
+            height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: #bdbdbd;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Kios Sedekah</h1>
+                <p>Belanja Berkah, Harga Murah, Keluarga Bahagia</p>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#tentang">Tentang Kami</a>
+                <a href="#produk">Daftar Menu Produk</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Selamat Datang di Kios Sedekah</h2>
+            <p>Menyediakan lebih dari 50 jenis produk sembako berkualitas tinggi untuk kebutuhan dapur dan rumah tangga Anda dengan pelayanan terbaik.</p>
+            <a href="#produk" class="btn">Lihat Menu Produk</a>
+        </div>
+    </section>
+
+    <!-- Alamat & Jam Operasional -->
+    <section class="info-section" id="tentang">
+        <div class="container info-grid">
+            <div class="info-box">
+                <h3>Alamat Kios</h3>
+                <p><strong>QXCR+HQ6</strong></p>
+                <p>Jl. Kp. Kandang, RT.002/RW.008, Harapan Mulya, Kecamatan Medan Satria, Kota Bks, Jawa Barat 17143</p>
+            </div>
+            <div class="info-box">
+                <h3>Jam Operasional</h3>
+                <p>Senin - Minggu: 06.00 - 21.00 WIB</p>
+                <p><em>Tetap buka di hari libur nasional untuk melayani Anda.</em></p>
+            </div>
+            <div class="info-box">
+                <h3>Layanan Kami</h3>
+                <p>✓ Produk Selalu Fresh & Ready Stock</p>
+                <p>✓ Melayani Eceran & Grosir</p>
+                <p>✓ Harga Bersaing & Ramah di Kantong</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Produk -->
+    <section class="container" id="produk">
+        <div class="catalog-title">
+            <h2>50+ List Produk Sembako Laris</h2>
+            <p>Daftar kebutuhan pokok yang wajib dan selalu tersedia di Kios Sedekah</p>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- 1. Beras -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80" alt="Beras" class="product-image">
+                <div class="product-info">
+                    <h3>1. Beras</h3>
+                    <p>Kebutuhan pokok utama. Tersedia berbagai jenis seperti beras pulen, beras pera, dan beras organik.</p>
+                </div>
+            </div>
+
+            <!-- 2. Minyak Goreng -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80" alt="Minyak Goreng" class="product-image">
+                <div class="product-info">
+                    <h3>2. Minyak Goreng</h3>
+                    <p>Selalu dicari. Tersedia berbagai merek seperti Bimoli, Filma, SunCo, dll dalam berbagai ukuran.</p>
+                </div>
+            </div>
+
+            <!-- 3. Gula Pasir -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1581781894506-9a67a5b6c81c?auto=format&fit=crop&w=400&q=80" alt="Gula Pasir" class="product-image">
+                <div class="product-info">
+                    <h3>3. Gula Pasir</h3>
+                    <p>Digunakan dalam masakan dan minuman sehari-hari. Stok gula pasir selalu aman tersedia.</p>
+                </div>
+            </div>
+
+            <!-- 4. Tepung Terigu -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" alt="Tepung Terigu" class="product-image">
+                <div class="product-info">
+                    <h3>4. Tepung Terigu</h3>
+                    <p>Untuk membuat roti, kue, dan gorengan. Kategori terlaris untuk kebutuhan dapur.</p>
+                </div>
+            </div>
+
+            <!-- 5. Telur Ayam -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=400&q=80" alt="Telur Ayam" class="product-image">
+                <div class="product-info">
+                    <h3>5. Telur Ayam</h3>
+                    <p>Sumber protein penting sehari-hari. Dijual dalam satuan kilogram atau lusin.</p>
+                </div>
+            </div>
+
+            <!-- 6. Garam -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1610450519105-09520c1590aa?auto=format&fit=crop&w=400&q=80" alt="Garam" class="product-image">
+                <div class="product-info">
+                    <h3>6. Garam</h3>
+                    <p>Bahan penting bumbu dapur yang tidak boleh ketinggalan. Tersedia varian garam beryodium sehat.</p>
+                </div>
+            </div>
+
+            <!-- 7. Kecap Manis & Asin -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1601599561096-f87c95fff1e9?auto=format&fit=crop&w=400&q=80" alt="Kecap" class="product-image">
+                <div class="product-info">
+                    <h3>7. Kecap Manis & Asin</h3>
+                    <p>Bumbu masak populer di Indonesia. Merek ternama seperti ABC, Bango, dan Indofood.</p>
+                </div>
+            </div>
+
+            <!-- 8. Mie Instan -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=400&q=80" alt="Mie Instan" class="product-image">
+                <div class="product-info">
+                    <h3>8. Mie Instan</h3>
+                    <p>Makanan praktis terfavorit. Sedia varian lengkap Indomie, Mie Sedaap, dan Sarimi.</p>
+                </div>
+            </div>
+
+            <!-- 9. Susu Bubuk & Cair -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=400&q=80" alt="Susu" class="product-image">
+                <div class="product-info">
+                    <h3>9. Susu Bubuk & Cair</h3>
+                    <p>Nutrisi anak dan dewasa. Merek populer seperti Dancow, Frisian Flag, dan Indomilk.</p>
+                </div>
+            </div>
+
+            <!-- 10. Kopi Instan -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80" alt="Kopi Instan" class="product-image">
+                <div class="product-info">
+                    <h3>10. Kopi Instan</h3>
+                    <p>Favorit para pencinta kopi. Tersedia merek Nescafé, Kapal Api, ABC, dan lainnya.</p>
+                </div>
+            </div>
+
+            <!-- 11. Teh Celup & Serbuk -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=400&q=80" alt="Teh" class="product-image">
+                <div class="product-info">
+                    <h3>11. Teh Celup & Serbuk</h3>
+                    <p>Minuman wajib harian di rumah. Merek SariWangi, Teh Pucuk, dan Sosro siap melengkapi.</p>
+                </div>
+            </div>
+
+            <!-- 12. Saus Sambal & Tomat -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1607305387299-a3d9611cd46f?auto=format&fit=crop&w=400&q=80" alt="Saus" class="product-image">
+                <div class="product-info">
+                    <h3>12. Saus Sambal & Tomat</h3>
+                    <p>Pelengkap makanan pedas dan segar. Merek populer ABC, Indofood, dan Dua Belibis.</p>
+                </div>
+            </div>
+
+            <!-- 13. Margarine & Mentega -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=400&q=80" alt="Margarine" class="product-image">
+                <div class="product-info">
+                    <h3>13. Margarine & Mentega</h3>
+                    <p>Untuk menumis, memasak, dan membuat kue. Merek Blue Band, Forvita, dan Palmia.</p>
+                </div>
+            </div>
+
+            <!-- 14. Bumbu Instan & Penyedap -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=400&q=80" alt="Bumbu Instan" class="product-image">
+                <div class="product-info">
+                    <h3>14. Bumbu Instan & Penyedap</h3>
+                    <p>Penyedap rasa andalan ibu rumah tangga seperti Royco, Masako, dan bumbu instan Sajiku.</p>
+                </div>
+            </div>
+
+            <!-- 15. Bahan Bumbu Kering -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1540161394694-697b9082c241?auto=format&fit=crop&w=400&q=80" alt="Bumbu Kering" class="product-image">
+                <div class="product-info">
+                    <h3>15. Bumbu Kering (Bawang)</h3>
+                    <p>Bawang merah, bawang putih, cabai kering, dan bahan dapur dasar lainnya.</p>
+                </div>
+            </div>
+
+            <!-- 16. Produk Kedelai -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80" alt="Tahu Tempe" class="product-image">
+                <div class="product-info">
+                    <h3>16. Produk Kedelai (Tahu/Tempe)</h3>
+                    <p>Sumber protein nabati sehat, murah, dan sangat populer untuk lauk pauk.</p>
+                </div>
+            </div>
+
+            <!-- 17. Ikan Asin & Abon -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=400&q=80" alt="Ikan Asin" class="product-image">
+                <div class="product-info">
+                    <h3>17. Ikan Asin & Abon</h3>
+                    <p>Lauk praktis tahan lama yang lezat dan cocok jadi stok cadangan di rumah.</p>
+                </div>
+            </div>
+
+            <!-- 18. Aneka Kerupuk -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=400&q=80" alt="Kerupuk" class="product-image">
+                <div class="product-info">
+                    <h3>18. Aneka Kerupuk</h3>
+                    <p>Teman setia makan sahur atau makan siang. Ada kerupuk udang, kulit, dan bawang.</p>
+                </div>
+            </div>
+
+            <!-- 19. Minuman Kemasan -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1527960471264-93a777288424?auto=format&fit=crop&w=400&q=80" alt="Minuman" class="product-image">
+                <div class="product-info">
+                    <h3>19. Minuman Kemasan</h3>
+                    <p>Air mineral botol/gelas, teh kemasan, serta jus buah segar untuk melepas dahaga.</p>
+                </div>
+            </div>
+
+            <!-- 20. Roti Tawar & Manis -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" alt="Roti" class="product-image">
+                <div class="product-info">
+                    <h3>20. Roti Tawar & Manis</h3>
+                    <p>Pilihan sarapan praktis yang bergizi dan digemari oleh seluruh anggota keluarga.</p>
+                </div>
+            </div>
+
+            <!-- 21. Aneka Snack Ringan -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bb087?auto=format&fit=crop&w=400&q=80" alt="Snack" class="product-image">
+                <div class="product-info">
+                    <h3>21. Aneka Snack Ringan</h3>
+                    <p>Camilan santai seperti keripik, kacang, dan biskuit. Merek Taro, Chitato, Oreo, dll.</p>
+                </div>
+            </div>
+
+            <!-- 22. Sabun Mandi & Cuci Tangan -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1607006342411-b013e8d0792b?auto=format&fit=crop&w=400&q=80" alt="Sabun" class="product-image">
+                <div class="product-info">
+                    <h3>22. Sabun Mandi & Tangan</h3>
+                    <p>Kebutuhan kebersihan esensial untuk menjaga kesehatan kulit keluarga Anda.</p>
+                </div>
+            </div>
+
+            <!-- 23. Pasta Gigi & Sikat Gigi -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1559599141-381dd20b868f?auto=format&fit=crop&w=400&q=80" alt="Gigi" class="product-image">
+                <div class="product-info">
+                    <h3>23. Pasta & Sikat Gigi</h3>
+                    <p>Perawatan gigi harian dari produk tepercaya: Pepsodent, Sensodyne, Formula.</p>
+                </div>
+            </div>
+
+            <!-- 24. Shampoo & Kondisioner -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=400&q=80" alt="Shampoo" class="product-image">
+                <div class="product-info">
+                    <h3>24. Shampoo & Kondisioner</h3>
+                    <p>Perawatan rambut terlengkap dengan varian Sunsilk, Pantene, Dove, dan lainnya.</p>
+                </div>
+            </div>
+
+            <!-- 25. Pembalut & Popok -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=400&q=80" alt="Popok" class="product-image">
+                <div class="product-info">
+                    <h3>25. Pembalut & Popok</h3>
+                    <p>Kebutuhan kesehatan dan kebersihan intim wanita serta kenyamanan popok bayi.</p>
+                </div>
+            </div>
+
+            <!-- 26. Deterjen & Pewangi -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1610557892470-55d9e80e0b96?auto=format&fit=crop&w=400&q=80" alt="Deterjen" class="product-image">
+                <div class="product-info">
+                    <h3>26. Deterjen & Pewangi</h3>
+                    <p>Pakaian bersih dan harum maksimal dengan stok Rinso, Molto, dan Attack.</p>
+                </div>
+            </div>
+
+            <!-- 27. Pembersih Lantai -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=400&q=80" alt="Pembersih" class="product-image">
+                <div class="product-info">
+                    <h3>27. Pembersih Lantai</h3>
+                    <p>Menjaga rumah tetap higienis dengan cairan Wipol, Vixal, dan Porstex.</p>
+                </div>
+            </div>
+
+            <!-- 28. Obat Nyamuk -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1528740561666-dc2479bd0dca?auto=format&fit=crop&w=400&q=80" alt="Obat Nyamuk" class="product-image">
+                <div class="product-info">
+                    <h3>28. Obat Nyamuk</h3>
+                    <p>Perlindungan keluarga dari gigitan nyamuk. Sedia Soffell, Autan, dan Baygon.</p>
+                </div>
+            </div>
+
+            <!-- 29. Tisu Basah & Kering -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" alt="Tisu" class="product-image">
+                <div class="product-info">
+                    <h3>29. Tisu Basah & Kering</h3>
+                    <p>Produk sanitasi serbaguna yang wajib dibawa bepergian dan ada di meja makan.</p>
+                </div>
+            </div>
+
+            <!-- 30. Tepung Bumbu -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=400&q=80" alt="Tepung Bumbu" class="product-image">
+                <div class="product-info">
+                    <h3>30. Tepung Bumbu</h3>
+                    <p>Tepung bumbu serbaguna instan merek Sajiku dan Kobe untuk gorengan renyah.</p>
+                </div>
+            </div>
+
+            <!-- 31-50 Silakan sesuaikan polanya atau dibiarkan otomatis terisi seperti di bawah -->
+            <!-- 31. Madu dan Selai -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=400&q=80" alt="Madu" class="product-image">
+                <div class="product-info">
+                    <h3>31. Madu dan Selai</h3>
+                    <p>Pelengkap olesan roti sarapan pagi yang manis, sehat, dan penuh gizi.</p>
+                </div>
+            </div>
+
+            <!-- 32. Sereal dan Oatmeal -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80" alt="Sereal" class="product-image">
+                <div class="product-info">
+                    <h3>32. Sereal dan Oatmeal</h3>
+                    <p>Menu sarapan cepat saji, kaya serat, dan sangat baik bagi kesehatan jantung.</p>
+                </div>
+            </div>
+
+            <!-- 33. Aneka Kacang-kacangan -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511117496515-e4c9e1026021?auto=format&fit=crop&w=400&q=80" alt="Kacang" class="product-image">
+                <div class="product-info">
+                    <h3>33. Aneka Kacang-kacangan</h3>
+                    <p>Kacang tanah, hijau, dan merah untuk bahan bubur atau camilan gurih.</p>
+                </div>
+            </div>
+
+            <!-- 34. Air Galon & Gas Elpiji -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=400&q=80" alt="Gas Elpiji" class="product-image">
+                <div class="product-info">
+                    <h3>34. Air Galon & Gas Elpiji</h3>
+                    <p>Kebutuhan energi dapur utama. Kami menyediakan isi ulang galon dan tabung gas resmi.</p>
+                </div>
+            </div>
+
+            <!-- 35. Gula Merah -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=400&q=80" alt="Gula Merah" class="product-image">
+                <div class="product-info">
+                    <h3>35. Gula Merah & Kelapa</h3>
+                    <p>Pemanis alami tradisional untuk masakan sayur lodeh, rujak, atau sirup kolak.</p>
+                </div>
+            </div>
+
+            <!-- 36. Bahan Kue -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&w=400&q=80" alt="Bahan Kue" class="product-image">
+                <div class="product-info">
+                    <h3>36. Bahan Kue (Coklat/Keju)</h3>
+                    <p>Coklat batang, keju cheddar parut, dan margarin pelengkap hobi *baking* Anda.</p>
+                </div>
+            </div>
+
+            <!-- 37. Aneka Rempah -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=400&q=80" alt="Rempah" class="product-image">
+                <div class="product-info">
+                    <h3>37. Aneka Rempah Tradisional</h3>
+                    <p>Jahe, kunyit, lengkuas, dan serai segar penambah cita rasa masakan Nusantara.</p>
+                </div>
+            </div>
+
+            <!-- 38. Susu Kental Manis -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1553456558-aff63285bdd1?auto=format&fit=crop&w=400&q=80" alt="Susu Kental Manis" class="product-image">
+                <div class="product-info">
+                    <h3>38. Susu Kental Manis</h3>
+                    <p>Pelengkap manis untuk martabak, jus, teh, atau kopi. Merek Frisian Flag & Indomilk.</p>
+                </div>
+            </div>
+
+            <!-- 39. Air Kelapa & Herbal -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5?auto=format&fit=crop&w=400&q=80" alt="Minuman Herbal" class="product-image">
+                <div class="product-info">
+                    <h3>39. Air Kelapa & Jamu Herbal</h3>
+                    <p>Minuman kesehatan alami penambah imunitas tubuh yang menyegarkan.</p>
+                </div>
+            </div>
+
+            <!-- 40. Telur Bebek -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?auto=format&fit=crop&w=400&q=80" alt="Telur Bebek" class="product-image">
+                <div class="product-info">
+                    <h3>40. Telur Bebek</h3>
+                    <p>Lebih gurih, sering digunakan untuk martabak telur atau jamu tradisional.</p>
+                </div>
+            </div>
+
+            <!-- 41. Daging Olahan -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=400&q=80" alt="Daging Olahan" class="product-image">
+                <div class="product-info">
+                    <h3>41. Daging Olahan (Sosis/Bakso)</h3>
+                    <p>Makanan beku siap saji terlaris: sosis, nugget, dan bakso kuah instan.</p>
+                </div>
+            </div>
+
+            <!-- 42. Vitamin & Suplemen -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=400&q=80" alt="Vitamin" class="product-image">
+                <div class="product-info">
+                    <h3>42. Vitamin & Suplemen</h3>
+                    <p>Menjaga stamina tubuh dengan asupan vitamin C, B-Kompleks, dan suplemen harian.</p>
+                </div>
+            </div>
+
+            <!-- 43. Bumbu Pecel -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=400&q=80" alt="Bumbu Pecel" class="product-image">
+                <div class="product-info">
+                    <h3>43. Bumbu & Sambal Pecel</h3>
+                    <p>Bumbu kacang pecel murni instan khas daerah yang lezat, tinggal seduh air hangat.</p>
+                </div>
+            </div>
+
+            <!-- 44. Susu Formula Bayi -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1596272875729-ed2ff7d6d9c5?auto=format&fit=crop&w=400&q=80" alt="Makanan Bayi" class="product-image">
+                <div class="product-info">
+                    <h3>44. Susu Formula & Bubur Bayi</h3>
+                    <p>Asupan nutrisi terbaik untuk sang buah hati, tersedia bubur instan cerelac.</p>
+                </div>
+            </div>
+
+            <!-- 45. Bumbu Masak Siap Pakai -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1601599561096-f87c95fff1e9?auto=format&fit=crop&w=400&q=80" alt="Bumbu Tradisional" class="product-image">
+                <div class="product-info">
+                    <h3>45. Bumbu Tradisional Instan</h3>
+                    <p>Sambal uleg kemasan, bumbu rendang, soto, dan rawon siap pakai.</p>
+                </div>
+            </div>
+
+            <!-- 46. Abon Sapi & Ayam -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=400&q=80" alt="Abon" class="product-image">
+                <div class="product-info">
+                    <h3>46. Abon Sapi & Ayam</h3>
+                    <p>Lauk tabur kering bergizi tinggi, sangat awet dan disukai anak-anak.</p>
+                </div>
+            </div>
+
+            <!-- 47. Pasta Gigi Anak -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1559599141-381dd20b868f?auto=format&fit=crop&w=400&q=80" alt="Pasta Gigi Anak" class="product-image">
+                <div class="product-info">
+                    <h3>47. Pasta Gigi Anak</h3>
+                    <p>Pasta gigi dengan rasa buah manis yang aman bila tidak sengaja tertelan anak.</p>
+                </div>
+            </div>
+
+            <!-- 48. Krimer Kental Manis -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1553456558-aff63285bdd1?auto=format&fit=crop&w=400&q=80" alt="Krimer" class="product-image">
+                <div class="product-info">
+                    <h3>48. Krimer Kental Manis</h3>
+                    <p>Pilihan krimer gurih kental yang sangat cocok untuk racikan kopi susu atau teh tarik.</p>
+                </div>
+            </div>
+
+            <!-- 49. Tepung Maizena & Beras -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" alt="Tepung Maizena" class="product-image">
+                <div class="product-info">
+                    <h3>49. Tepung Maizena & Beras</h3>
+                    <p>Bahan pengental kuah capcay serta dasar pembuatan kue tradisional jajanan pasar.</p>
+                </div>
+            </div>
+
+            <!-- 50. Jamur Tiram & Kancing -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=400&q=80" alt="Jamur" class="product-image">
+                <div class="product-info">
+                    <h3>50. Jamur Tiram & Kancing</h3>
+                    <p>Bahan makanan sayur segar alternatif daging untuk hidangan tumis sehat bernutrisi tinggi.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer & Kontak -->
+    <footer id="kontak">
+        <div class="container">
+            <p><strong>Kios Sedekah © 2026</strong></p>
+            <p>Alamat: QXCR+HQ6, Jl. Kp. Kandang, RT.002/RW.008, Harapan Mulya, Kec. Medan Satria, Kota Bekasi, Jawa Barat 17143</p>
+            <p>Hubungi Kami via WhatsApp: <strong>0812-XXXX-XXXX</strong></p>
+        </div>
+    </footer>
+
+</body>
+</html>
